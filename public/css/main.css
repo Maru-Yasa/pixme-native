@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Pixellari';
+    src: url('../fonts/Pixellari.eot');
+    src: url('../fonts/Pixellari.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Pixellari.woff2') format('woff2'),
+        url('../fonts/Pixellari.woff') format('woff'),
+        url('../fonts/Pixellari.ttf') format('truetype'),
+        url('../fonts/Pixellari.svg#Pixellari') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    font-family: 'Pixellari';
+    font-weight: 500;
+    font-style: normal;
+}
+
+html{
+}
+
+hr{
+    border: 2px solid black;
+}
+
+.pink{
+    background-color: lightsalmon;
+    color: black;
+}
+
+.green{
+    background-color: lightgreen;
+    color: black;
+}
+
+.yellow{
+    background-color: wheat;
+    color: black;
+}
+
+.blue{
+    background-color: lightcyan;
+}
+
+.grey{
+    background-color: lightgrey;
+}
+
+.my-border{
+    border: 4px solid black;
+}
+
+.my-border-nav{
+    border-bottom: 4px solid black;
+}
+
+.my-border-sub{
+    border: 2px solid black;
+}
+
+.my-button-black{
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.my-button-white{
+    background-color: white; 
+    border: 2px solid black;
+    color: black;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.my-button-red{
+    background-color: rgb(240, 0, 0); 
+    border: 2px solid black;
+    color: black;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.my-button-green{
+    background-color: lightgreen; 
+    border: 2px solid black;
+    color: black;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.my-button-pink{
+    background-color: lightsalmon; 
+    border: 2px solid black;
+    color: black;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.my-button-yellow{
+    background-color: wheat; 
+    border: 2px solid black;
+    color: black;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.my-button-black:hover{
+    background-color: white;
+    color: black;
+}
+
+.my-button-white:hover{
+    background-color: black;
+    color: white;
+}
+
+.my-label-danger{
+    color: red;
+}
+
+.my-label-success{
+    color: green;
+}
+
+.my-shadow{
+        box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+-webkit-box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+-moz-box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+}

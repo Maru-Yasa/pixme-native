@@ -1,0 +1,5 @@
+ErrorDocument 400 /secreto_clone/error.php?status_code=400
+ErrorDocument 401 /secreto_clone/error.php?status_code=401
+ErrorDocument 403 /secreto_clone/error.php?status_code=403
+ErrorDocument 404 /secreto_clone/error.php
+ErrorDocument 500 /secreto_clone/error.php?status_code=500
