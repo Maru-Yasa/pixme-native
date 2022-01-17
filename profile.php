@@ -14,6 +14,8 @@ $USER = [
 $user = $db->getUserByUsername($_SESSION['username']);
 $page = $db->getPage($user['id']);
 
+$total_visitor = $page['visitor'];
+
 $comments = $db->getAllComments($_SESSION['username']);
 $sub_comments = $db->getAllSubComments($_SESSION['username']);
 
@@ -72,9 +74,9 @@ if (isset($_POST['reply'])) {
 <html>
 <head>
 	<meta charset="utf-8">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./public/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./public/css/main.css">
-	<title>Secreto clone</title>
+	<title>Pixme | <?= $_SESSION['username']?></title>
 
 </head>
 <body>
@@ -99,7 +101,7 @@ if (isset($_POST['reply'])) {
 
 			<div class="col-9 mt-5 mb-5 p-3 my-border my-shadow">
 				<h1 class="text-center">Hello <?= $_SESSION['username'] ?></h1>
-				<h5 class="text-center"> <?= count($comments) ?> Comments | 0 viewers</h5>
+				<h5 class="text-center"> <?= count($comments) ?> Comments | <?= $total_visitor ?> visitors</h5>
 				<p class="text-center"><?= $page['about'] ?></p>
 				<div class="mb-2">
 					<form method="POST" class="d-flex justify-content-center" action="">

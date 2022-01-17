@@ -287,4 +287,73 @@ class Database extends Connection{
 	}
 
 
+
+/*
+====================================================================
+	Visitor methods
+====================================================================
+*/
+
+	public function getTotalViews($pageId)
+	{
+		$query = "SELECT sum(visitor) as visitor FROM pages WHERE id = :pageId";
+		$statement = $this->prepare($query);
+		$statement->execute(array(
+			"pageId" => $pageId
+		));
+		$result = $statement->fetch(PDO::FETCH_ASSOC);
+		return $result;
+
+	}
+
+	public function isUniqueVisitor($visitorIp,$pageId)
+	{		
+
+		$query = "SELECT * FROM page_views WHERE page = :pageId AND ip = :visitorIp";
+		$statement = $this->prepare($query);
+		$statement->execute(array(
+			"visitorIp" => $visitorIp,
+			"pageId" => $pageId
+		));
+		$result = $statement->fetch(PDO::FETCH_COLUMN);
+		if ($result === false) {
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+
+	public function updateViewsTotal($pageId)
+	{	
+		$query = "UPDATE `pages`   
+	   		SET `visitor` = visitor + 1
+	 		WHERE `id` = :pageId";
+	 	$statement = $this->prepare($query);
+	 	$statement->execute(array(
+	 		"pageId" => $pageId
+	 	));
+	}
+
+	public function addPageView($ip,$pageId)
+	{
+
+
+		if ($this->isUniqueVisitor($ip,$pageId)) {
+			
+			$query = "INSERT INTO page_views (ip,page) VALUES (:ip,:pageId)";
+			$statement = $this->prepare($query);
+			$statement->execute(array(
+				"ip" => $ip,
+				"pageId" => $pageId
+			));
+			$this->updateViewsTotal($pageId);
+
+		}
+
+	}
+
 }
+
+
+
